@@ -8,8 +8,8 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "Cobalt88",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^6.3.8"
