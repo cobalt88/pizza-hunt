@@ -1,0 +1,28 @@
+{
+  "name": "18-nosql",
+  "version": "1.0.0",
+  "private": true,
+  "description": "module 18 MongoDB Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.3.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobalt88/pizza-hunt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cobalt88/pizza-hunt/issues"
+  },
+  "homepage": "https://github.com/cobalt88/pizza-hunt#readme"
+}
