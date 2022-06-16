@@ -1,7 +1,13 @@
 const { Pizza } = require('../models');
 
+/*
+================================================
+PIZZA CONTROLLERS - CRUD OPERATIONS
+================================================
+*/
+
 const pizzaController = {
-  // get all pizzas
+  // GET ALL PIZZA'S
   getAllPizza(req, res) {
     Pizza.find({})
       .populate({
@@ -41,10 +47,9 @@ const pizzaController = {
   createPizza({ body }, res) {
     Pizza.create(body)
       .then(dbPizzaData => res.json(dbPizzaData))
-      .catch(err => res.json(err));
+      .catch(err => res.status(400).json(err));
   },
-
-  // update pizza by id
+  // EDIT/UPDATE PIZZA
   updatePizza({ params, body }, res) {
     Pizza.findOneAndUpdate({ _id: params.id }, body, { new: true })
       .then(dbPizzaData => {
@@ -54,15 +59,21 @@ const pizzaController = {
         }
         res.json(dbPizzaData);
       })
-      .catch(err => res.json(err));
+      .catch(err => res.status(400).json(err));
   },
-
-  // delete pizza
+  // DELETE PIZZA
   deletePizza({ params }, res) {
     Pizza.findOneAndDelete({ _id: params.id })
-      .then(dbPizzaData => res.json(dbPizzaData))
-      .catch(err => res.json(err));
+      .then(dbPizzaData => {
+        if (!dbPizzaData) {
+          res.status(404).json({ message: 'No pizza found with this id!' });
+          return;
+        }
+        res.json(dbPizzaData);
+      })
+      .catch(err => res.status(400).json(err));
   }
-};
+}
 
-module.exports = pizzaController;
+
+module.exports = pizzaController
