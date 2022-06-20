@@ -23,11 +23,7 @@ const pizzaController = {
       });
   },
 
-<<<<<<< HEAD
-  // get one pizza by id
-=======
   // GET PIZZA BY ID
->>>>>>> ba80be477c2179acfcfaa8d5fd0d08c712b99466
   getPizzaById({ params }, res) {
     Pizza.findOne({ _id: params.id })
       .populate({
@@ -42,11 +38,7 @@ const pizzaController = {
       });
   },
 
-<<<<<<< HEAD
-  // createPizza
-=======
   // CREATE NEW PIZZA
->>>>>>> ba80be477c2179acfcfaa8d5fd0d08c712b99466
   createPizza({ body }, res) {
     Pizza.create(body)
       .then(dbPizzaData => res.json(dbPizzaData))
